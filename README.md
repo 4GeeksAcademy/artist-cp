@@ -1,41 +1,22 @@
-# HTML Hello
+<div align="center">
+  <img src="../../Cecilia_Perdomo.png" alt="Cecilia Perdomo">
+</div>
 
-The most basic boilerplate for any 4Geeks Academy student, start your very first website from scratch.
+# Reto
+Has decidido tirarte de cabeza en el mundo de la AI Engineering. Y mientras aprendes fundamentos de HTML, CSS y SEO, te ha surgido la primera oportunidad de hacer un website para un amigo artista que necesita darse a conocer y exponer su talento.
 
-> There is a video tutorial on [how to use this template to create your very first website here](https://youtu.be/dfbDCMu_p-0).
+Estás empezando, por lo que harás una versión inicial que más adelante podrás hacer crecer, pero no por eso dejará de ser un trabajo de calidad, mucho menos si lo haces en compañía de la IA. Así que ¡da lo mejor de ti! 😁
 
-## What to do next?
+Tras conversar con tu amigo, deciden comenzar con una primera versión que le permita tener presencia en internet. Será una sola página, a modo de landing page, que deberá tener su barra de navegación con enlaces principales (sobre mí, trayectoria, próximas presentaciones) que llevarán a las distintas secciones del contenido. Y como todo libro, debe tener una buena portada; así que también habrá que incorporar una primera sección que dé la bienvenida a esa web.
 
-Create an `index.html` file with the [basic HTML structure](http://4geeks.com/lesson/what-is-html-learn-html#page-structure) and see it live by running a web-server using the following command:
+Cada sección debe ocupar aproximadamente el alto de una pantalla del computador, como si viéramos una única página.
 
+Y ten en cuenta que en internet hay dos cosas muy importantes:
+- No todo el mundo tiene las mismas capacidades visuales, así que es importante identificar los elementos con etiquetas de accesibilidad que las personas con diversidad funcional visual o usuarios de lectores de pantalla puedan navegar en ella.
+- La indexación en buscadores es crucial para que te puedan encontrar, así que no olvides los principios de SEO y añade el etiquetado que consideres conveniente, tanto de HTML semántico como de Schema.org.
+
+## Inicialización
+Para iniciar este proyecto
 ```bash
-$ pip3 install flask && python3 server.py
+pip3 install flask && python3 server.py
 ```
-
-- You can create as many HTML files as you want.
-- You can also create CSS files and import them into your website using a `<link>` tag placed between the `<head></head>` tags, like this:
-
-```html
-<head>
-  ...
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
-```
-
-- If you want to use Tailwind CSS, add it optionally via the official Tailwind CSS v4 CDN inside the same `<head>`:
-
-```html
-<head>
-  ...
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
-```
-
-### Contributors
-
-This template was built as part of the [Full Stack Developer course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer) at [4Geeks Academy Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and [many other contributors](https://github.com/4GeeksAcademy/html-hello/graphs/contributors).
-
-You can find other templates and resources like this at the [school's GitHub page](https://github.com/4geeksacademy/).
