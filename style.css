@@ -3,6 +3,11 @@ body {
     font-family: Arial, sans-serif;
     color: #2f241f;
     background-color: #f8f1eb;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 .skip-link {
@@ -67,6 +72,29 @@ header nav a {
     letter-spacing: 0.08rem;
 }
 
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #d8c5b5;
+    border-radius: 8px;
+    background-color: #fffaf6;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0;
+}
+
+.menu-toggle-line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #5c4033;
+    border-radius: 999px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
 #inicio h1,
 #inicio p,
 #sobre-mi,
@@ -78,8 +106,8 @@ header nav a {
 
 .hero-image {
     display: block;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: min(100vh, 720px);
     object-fit: cover;
 }
 
@@ -170,6 +198,15 @@ header nav a {
 
 #inicio h1 {
     margin-top: 2rem;
+    font-size: clamp(1.85rem, 4vw, 3rem);
+    line-height: 1.15;
+}
+
+#inicio p,
+.about-text p,
+.journey-text p,
+.events-text p {
+    line-height: 1.6;
 }
 
 section {
@@ -244,21 +281,88 @@ section {
     opacity: 0.8;
 }
 
+@media (max-width: 1024px) {
+    header nav {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .about-content,
+    .journey-content,
+    .events-content {
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     header nav {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.85rem;
         padding: 1rem 1.25rem;
     }
 
+    .menu-toggle {
+        display: inline-flex;
+        margin-left: auto;
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-line:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-line:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
     .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.85rem;
+        width: 100%;
+        margin-top: 0.25rem;
+        padding: 0.9rem 1rem;
+        background-color: #fff3ea;
+        border: 1px solid #eadacc;
+        border-radius: 10px;
+    }
+
+    .nav-links.is-open {
+        display: flex;
     }
 
     .artist-name {
         font-size: 1.75rem;
+    }
+
+    .nav-links a {
+        font-size: 0.78rem;
+        letter-spacing: 0.05rem;
+        text-align: center;
+    }
+
+    #inicio h1,
+    #inicio p,
+    #sobre-mi,
+    #trayectoria,
+    #proximas-presentaciones {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    section {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .hero-image {
+        height: 70vh;
+        min-height: 280px;
     }
 
     .about-content {
@@ -269,6 +373,14 @@ section {
         flex-direction: column;
     }
 
+    .journey-text {
+        order: 1;
+    }
+
+    .journey-image {
+        order: 2;
+    }
+
     .events-content {
         flex-direction: column;
     }
@@ -276,18 +388,21 @@ section {
     .about-image {
         width: 100%;
         max-width: 100%;
+        margin-top: 0.5rem;
         transform: rotate(2deg);
     }
 
     .journey-image {
         width: 100%;
         max-width: 100%;
+        margin-top: 0.5rem;
         transform: rotate(-2deg);
     }
 
     .events-image {
         width: 100%;
         max-width: 100%;
+        margin-top: 0.5rem;
         transform: rotate(2deg);
     }
 
@@ -298,5 +413,35 @@ section {
 
     .site-footer {
         padding: 2rem 1.25rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .artist-name {
+        font-size: 1.55rem;
+        max-width: calc(100% - 56px);
+    }
+
+    .nav-links {
+        gap: 0.7rem;
+    }
+
+    #inicio h1 {
+        font-size: 1.7rem;
+    }
+
+    #inicio p,
+    .about-text p,
+    .journey-text p,
+    .events-text p {
+        font-size: 0.98rem;
+    }
+
+    .hero-image {
+        height: 58vh;
+    }
+
+    .site-footer h2 {
+        font-size: 0.92rem;
     }
 }
